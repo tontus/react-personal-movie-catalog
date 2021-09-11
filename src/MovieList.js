@@ -42,12 +42,7 @@ function MovieList() {
         poster: "https://m.media-amazon.com/images/I/51oFj1gwDyL._AC_.jpg",
         watched: true
     },
-    {
-        key: 7,
-        name: "Trainspotting ",
-        poster: "https://m.media-amazon.com/images/I/51oFj1gwDyL._AC_.jpg",
-        watched: true
-    }
+    
     ]
 
     
