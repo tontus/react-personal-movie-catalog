@@ -1,8 +1,9 @@
-import { Card, Col, Image, Row } from "react-bootstrap";
+import { Card, Col, Image, Row, Button } from "react-bootstrap";
 import { FaBeer } from 'react-icons/fa';
-
+import { useState } from "react";
 
 function MovieCard(props) {
+    console.log(props.movie)
     var cardClass = ''
     var cardStyle = ''
 
@@ -14,12 +15,19 @@ function MovieCard(props) {
         cardClass = 'NotWatched'
         cardStyle = 'background-color: #fff'
     }
+    const [movieWatched, setMovieWatched] = useState(props.movie.watched)
     
+    
+    function handleClick (){
+        setMovieWatched(!movieWatched)
+    }
     
     return (
         <Card className= 'mt-5' style = {{cardStyle}} >
             <Card.Body className= {cardClass}>
+                <p>local value: {movieWatched.toString()}</p>
                 
+                <p>props value: { props.movie.watched.toString()}</p>
                     <Row>
                         <Col>
                             <Image src={props.movie.poster} style={{ height: 200 }}/>
@@ -32,12 +40,16 @@ function MovieCard(props) {
                     <Col>
                         {
                             
-                            props.movie.watched ? <div>
+                            movieWatched ? <div>
                                 <FaBeer />
                                 <h2>{props.movie.rating}/5</h2>
                             </div> : <h3>Great movie, watch fast</h3>
                            
-                       }
+                        }
+                        
+            <Button onClick={handleClick}>
+                button
+            </Button>
                     </Col>
                     </Row>
         

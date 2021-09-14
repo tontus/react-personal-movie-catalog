@@ -2,8 +2,10 @@ import MovieCard from "./MovieCard";
 
 function MovieList() {
     // const movieList = ['The Prophet', 'Life of Pie', 'Daruchini dip'];
+    
+const buttonClicked ='Click hoy nai'
     const movieList = [
-        { name: 'The Prophet', poster: 'https://upload.wikimedia.org/wikipedia/en/6/65/Kahlil_Gibran%27s_The_Prophet_poster.jpg', watched: true, rating: 4.5 },
+        { name: 'The Prophet', poster: 'https://upload.wikimedia.org/wikipedia/en/6/65/Kahlil_Gibran%27s_The_Prophet_poster.jpg', watched: true, rating: 4.5, test: {nam: " kichu ekta"} },
         { name: 'Daruchini Dwip', poster: 'https://upload.wikimedia.org/wikipedia/en/6/68/Daruchini_Dip.jpg', watched: false, rating: 5 },
         { name: 'Life of Pi', poster: 'https://m.media-amazon.com/images/M/MV5BNTg2OTY2ODg5OF5BMl5BanBnXkFtZTcwODM5MTYxOA@@._V1_.jpg', watched: true, rating: 3 },
          {
@@ -50,6 +52,9 @@ function MovieList() {
 
     return (
         <div>
+            <p>
+                {buttonClicked}
+            </p>
             <ul>
                 {
                     movieList.map(movie =>
